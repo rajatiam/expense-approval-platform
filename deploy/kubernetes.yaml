@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: 11-expense-ledger-data
+  name: expense-approval-platform-data
 spec:
   accessModes: [ReadWriteOnce]
   resources:
@@ -11,18 +11,18 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 11-expense-ledger
+  name: expense-approval-platform
 spec:
   replicas: 1
   strategy:
     type: Recreate
   selector:
     matchLabels:
-      app: 11-expense-ledger
+      app: expense-approval-platform
   template:
     metadata:
       labels:
-        app: 11-expense-ledger
+        app: expense-approval-platform
     spec:
       securityContext:
         runAsNonRoot: true
@@ -30,7 +30,7 @@ spec:
         fsGroup: 10001
       containers:
         - name: app
-          image: 11-expense-ledger:local
+          image: expense-approval-platform:local
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8111
@@ -60,15 +60,15 @@ spec:
       volumes:
         - name: data
           persistentVolumeClaim:
-            claimName: 11-expense-ledger-data
+            claimName: expense-approval-platform-data
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: 11-expense-ledger
+  name: expense-approval-platform
 spec:
   selector:
-    app: 11-expense-ledger
+    app: expense-approval-platform
   ports:
     - port: 80
       targetPort: 8111

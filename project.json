@@ -1,5 +1,5 @@
 {
-  "name": "Expense Ledger",
+  "name": "Expense Approval Platform",
   "kind": "expenses",
   "entity": "expense",
   "accent": "#0f766e",
@@ -33,5 +33,7 @@
   "demo_action": "approve",
   "demo_expected": {
     "status": "approved"
-  }
+  },
+  "slug": "expense-approval-platform",
+  "engineering_version": "3.0.0"
 }
