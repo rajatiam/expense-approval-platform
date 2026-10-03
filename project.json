@@ -1,0 +1,37 @@
+{
+  "name": "Expense Ledger",
+  "kind": "expenses",
+  "entity": "expense",
+  "accent": "#0f766e",
+  "skills": "Financial invariants, approval workflows, decimal arithmetic, team reporting",
+  "description": "Approve expenses and track authorized spend by team.",
+  "example": {
+    "name": "Laptop service",
+    "reference": "INV-100",
+    "team": "platform",
+    "amount": 120.0,
+    "budget": 500.0
+  },
+  "port": 8111,
+  "fields": [
+    "name",
+    "reference",
+    "team",
+    "amount",
+    "budget"
+  ],
+  "stack": [
+    "Python",
+    "FastAPI",
+    "Angular",
+    "TypeScript",
+    "SQLite",
+    "Docker",
+    "Kubernetes",
+    "GitHub Actions"
+  ],
+  "demo_action": "approve",
+  "demo_expected": {
+    "status": "approved"
+  }
+}
